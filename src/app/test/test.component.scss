@@ -1,0 +1,23 @@
+#photo {
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: #9e818171;
+    padding: 1em;
+    margin: 2em;
+    text-align: center;
+
+    img {
+        background-color: #6967679a;
+        width: 15em;
+        height: 15em;
+        border-radius: 50%;
+        padding: 1em;
+        opacity: .5;
+        transition: .2s;
+    }
+
+    img:hover {
+        opacity: 1;
+        transition: .2s;
+    }
+}

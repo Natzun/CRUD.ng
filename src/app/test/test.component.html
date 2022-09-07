@@ -1,1 +1,33 @@
-<p>test works!</p>
+<button (click)="testando()">
+  Clique Aqui!
+</button>
+
+<button (click)="naoClique()">
+  Não Clique Aqui!
+</button>
+
+<button *ngFor="let item of test | keyvalue">
+  value: {{item.value}}
+  <br>
+  key: {{item.key}}
+</button>
+
+<div id="photo">
+  <div *ngFor="let item of test | keyvalue">
+    <h3>{{item.value}}</h3>
+    <img src="../assets/Images/{{item.value}}.jpg">
+  </div>
+
+  <!-- <h2>
+    Photo
+  </h2>
+
+  <h2>
+    É isso!
+  </h2>
+
+  <h2>
+    {{title}}
+    <button (click)="alertar('')"></button>
+  </h2> -->
+</div>
