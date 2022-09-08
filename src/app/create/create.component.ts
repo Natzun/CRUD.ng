@@ -11,7 +11,7 @@ export class CreateComponent implements OnInit {
 
   constructor(
     private cdr: ChangeDetectorRef,
-    private app: AppComponent
+    public app: AppComponent
   ) {
     console.log('[CreateComponent#constructor]');
   }
@@ -19,5 +19,11 @@ export class CreateComponent implements OnInit {
   ngOnInit(): void {
     console.log('[CreateComponent#ngOnInit]');
     this.app.updateView(this.title);
+  }
+
+  updateView() {
+    console.log(`[${this.title}#updateView]`);
+
+    this.cdr.detectChanges;
   }
 }

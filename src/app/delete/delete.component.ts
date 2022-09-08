@@ -11,7 +11,7 @@ export class DeleteComponent implements OnInit {
 
   constructor(
     private cdr: ChangeDetectorRef,
-    private app: AppComponent
+    public app: AppComponent
   ) {
     console.log('[DeleteComponent#constructor]');
   }
@@ -19,5 +19,11 @@ export class DeleteComponent implements OnInit {
   ngOnInit(): void {
     console.log('[DeleteComponent#ngOnInit]');
     this.app.updateView(this.title);
+  }
+
+  updateView() {
+    console.log(`[${this.title}#updateView]`);
+
+    this.cdr.detectChanges;
   }
 }

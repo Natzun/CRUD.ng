@@ -11,7 +11,7 @@ export class ReadComponent implements OnInit {
 
   constructor(
     private cdr: ChangeDetectorRef,
-    private app: AppComponent
+    public app: AppComponent
   ) {
     console.log('[ReadComponent#constructor]');
   }
@@ -19,5 +19,11 @@ export class ReadComponent implements OnInit {
   ngOnInit(): void {
     console.log('[ReadComponent#ngOnInit]');
     this.app.updateView(this.title);
+  }
+
+  updateView() {
+    console.log(`[${this.title}#updateView]`);
+
+    this.cdr.detectChanges;
   }
 }
