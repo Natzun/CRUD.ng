@@ -1,5 +1,7 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { AppComponent } from '../app.component';
+import { GlobalVariablesService } from '../services/global-variables.service';
 
 @Component({
   selector: 'app-read',
@@ -10,6 +12,7 @@ export class ReadComponent implements OnInit {
   title = 'read';
 
   constructor(
+    public GVS: GlobalVariablesService,
     private cdr: ChangeDetectorRef,
     public app: AppComponent
   ) {
@@ -25,5 +28,12 @@ export class ReadComponent implements OnInit {
     console.log(`[${this.title}#updateView]`);
 
     this.cdr.detectChanges;
+    this.app.updateView(this.title);
+  }
+
+  redirectTo(url: any) {
+    this.app.redirectTo(url, this.title);
+
+    this.updateView();
   }
 }
